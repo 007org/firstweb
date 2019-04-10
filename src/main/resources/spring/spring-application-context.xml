@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- 扫描整个com包 -->
+    <context:component-scan base-package="com" />
+
+    <!-- 扫描配置文件，在java类中可以使用@Value注解使用里面的属性 ignore-unresolvable="true":加载类的时候没有加载到这个配置文件忽视错误 -->
+    <context:property-placeholder ignore-unresolvable="true" location="classpath:config.properties" />
+</beans>
